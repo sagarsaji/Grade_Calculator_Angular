@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout SCM') {
-            steps {
-                git branch: 'main', credentialsId: 'ad63f2f4-0502-4bb9-bd0b-e2d047f54da8', url: 'https://github.com/sagarsaji/Grade_Calculator_Angular.git'
-            }
-        }
-
         stage('Install Node Modules') {
             steps {
                 git branch: 'main', credentialsId: 'ad63f2f4-0502-4bb9-bd0b-e2d047f54da8', url: 'https://github.com/sagarsaji/Grade_Calculator_Angular.git'
