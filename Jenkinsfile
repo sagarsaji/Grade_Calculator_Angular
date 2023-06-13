@@ -30,6 +30,13 @@ pipeline {
                 bat 'docker build -t sagarsaji/angular-grade .'
             }
         }
+
+         stage('Docker Run') {
+            steps {
+                git branch: 'main', credentialsId: 'ad63f2f4-0502-4bb9-bd0b-e2d047f54da8', url: 'https://github.com/sagarsaji/Grade_Calculator_Angular.git'
+                bat 'docker run -d -it -p 80:80/tcp --name angular-grade sagarsaji/angular-grade:latest'
+            }
+        }
         
          stage('Docker Image') {
             steps {
