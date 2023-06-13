@@ -27,14 +27,14 @@ pipeline {
         stage('Docker Build') {
             steps {
                 git branch: 'main', credentialsId: 'ad63f2f4-0502-4bb9-bd0b-e2d047f54da8', url: 'https://github.com/sagarsaji/Grade_Calculator_Angular.git'
-                bat 'docker build -t sagarsaji/angular-grade .'
+                bat 'docker build -t sagarsaji/angular-gradee .'
             }
         }
 
          stage('Docker Run') {
             steps {
                 git branch: 'main', credentialsId: 'ad63f2f4-0502-4bb9-bd0b-e2d047f54da8', url: 'https://github.com/sagarsaji/Grade_Calculator_Angular.git'
-                bat 'docker run -d -it -p 80:80/tcp --name angular-grade sagarsaji/angular-grade:latest'
+                bat 'docker run -d -it -p 80:80/tcp --name angular-gradee sagarsaji/angular-gradee:latest'
             }
         }
         
@@ -48,7 +48,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 git branch: 'main', credentialsId: 'ad63f2f4-0502-4bb9-bd0b-e2d047f54da8', url: 'https://github.com/sagarsaji/Grade_Calculator_Angular.git'
-                bat 'docker push sagarsaji/angular-grade:latest'
+                bat 'docker push sagarsaji/angular-gradee:latest'
             }
         }
     }
